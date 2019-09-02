@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/geopos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lat: Lng:"
+        android:lines="2"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:id="@+id/upload_file_linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/count_file_to_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/files_to_upload"
+            android:layout_marginBottom="8dp" />
+
+    </LinearLayout>
+
+    <Chronometer
+        android:id="@+id/record_chronometer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:layout_centerInParent="true" />
+    <Button
+        android:id="@+id/send_audio_now"
+        android:layout_marginTop="16dp"
+        style="@style/blue_button"
+        android:background="@drawable/blue_button_radius"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/record_chronometer"
+        android:text="@string/send_audio"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/stop_new_audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/blue_button"
+        android:background="@color/opacity_back"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/end_audio"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/start_new_audio"
+        style="@style/blue_button"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/start_new_audio" />
+</RelativeLayout>

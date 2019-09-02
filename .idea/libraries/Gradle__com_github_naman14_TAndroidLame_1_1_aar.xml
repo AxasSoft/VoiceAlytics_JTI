@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.naman14:TAndroidLame:1.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1d6487956570131f6dc49a6d9780c2be/TAndroidLame-1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1d6487956570131f6dc49a6d9780c2be/TAndroidLame-1.1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.naman14/TAndroidLame/1.1/a308c518aa49916b3ec9fb6981cb8970ac2e73b1/TAndroidLame-1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

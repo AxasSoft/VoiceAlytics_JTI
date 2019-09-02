@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#3F51B5</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="background_color">#F4F5F7</color>
+    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="opacity_back">#00ffffff</color>
+    <color name="white">#FFFFFF</color>
+    <color name="appbar_color">#898989</color>
+    <color name="appbar_text_color">#2E3239</color>
+    <color name="text_color">#2E3239</color>
+    <color name="blue_button">#4582FB</color>
+    <color name="text_light">#7C7D8E</color>
+    <color name="grey_border">#EEF0F1</color>
+</resources>

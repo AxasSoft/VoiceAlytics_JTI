@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mask="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    android:padding="18dp"
+    tools:context=".LoginUser">
+
+    <TextView
+        style="@style/standart_grey_text"
+        android:text="@string/enter_your_phone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/white_radius_left"
+            android:padding="8dp"
+            android:src="@drawable/ic_registration_phone" />
+
+        <com.github.pinball83.maskededittext.MaskedEditText
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_radius_right"
+            android:hint="1234567890"
+            android:inputType="phone"
+            android:padding="12.5dp"
+            android:textSize="20sp"
+
+            mask:mask="+*(***)***-**-**"
+            app:notMaskedSymbol="*"/>
+    </LinearLayout>
+
+
+    <!--Enter password-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/white_radius_left"
+            android:padding="8dp"
+            android:src="@drawable/ic_registration_password" />
+
+        <EditText
+            android:id="@+id/editPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_radius_right"
+            android:hint="@string/registration_password"
+            android:inputType="textWebPassword"
+            android:padding="12.5dp"
+            android:textSize="20sp"
+            android:typeface="monospace" />
+    </LinearLayout>
+
+
+    <Button
+        style="@style/blue_button"
+        android:id="@+id/loginButton"
+        android:text="@string/login_with_my_account" />
+
+</LinearLayout>

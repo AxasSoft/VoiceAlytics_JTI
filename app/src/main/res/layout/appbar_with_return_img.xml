@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <ImageView
+
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/appbar_default_text"
+            android:onClick="appbarExitButton"
+            android:scaleType="center"
+            android:src="@drawable/ic_back_arrow" />
+        <!--
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textColor="@color/blue_button"
+            android:text="@string/appbar_back_button_text"/>
+            -->
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/appbar_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="40dp"
+        android:gravity="center_vertical"
+        android:text="@string/appbar_default_text"
+        android:textAlignment="center"
+        android:textColor="@color/appbar_text_color"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

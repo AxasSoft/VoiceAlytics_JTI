@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_create_audio"
+            android:icon="@drawable/ic_audio"
+            android:title="Запись" />
+        <item
+            android:id="@+id/nav_audio_list"
+            android:icon="@drawable/ic_audio_list"
+            android:title="Мои записи" />
+        <item
+            android:id="@+id/nav_statistics"
+            android:icon="@drawable/ic_statistics"
+            android:title="Статистика" />
+        <item
+            android:id="@+id/nav_mark"
+            android:icon="@drawable/ic_marks"
+            android:title="Марки" />
+        <item
+            android:id="@+id/nav_send_log"
+            android:icon="@drawable/ic_send"
+            android:title="Отправить лог" />
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/ic_exit"
+            android:title="Выход" />
+    </group>
+</menu>
