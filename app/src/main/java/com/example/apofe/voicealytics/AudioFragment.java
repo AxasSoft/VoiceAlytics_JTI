@@ -77,6 +77,9 @@ public class AudioFragment extends Fragment implements
     TextView geopos;
     FileOutputStream outputStream;
     boolean isRecording = false;
+    List<Integer> bufferList = new ArrayList<Integer>();
+    List<byte[]> mp3List = new ArrayList<byte[]>();
+    boolean isKeyWordSayed = false;
     private LocationManager mLocationManager;
     private LocationListener mLocationListener;
     private Button startRecordButton; // начать запись
@@ -176,6 +179,7 @@ public class AudioFragment extends Fragment implements
             @Override
             public void onClick(View v) {
                 // вызываем метод
+                isKeyWordSayed = false;
                 startWork();
             }
         });
@@ -292,7 +296,7 @@ public class AudioFragment extends Fragment implements
 
     // начинаем работу
     public void startWork() {
-        recognizer.stop();
+        //recognizer.stop();
         if (showCurrentLocation()) {
             // с помощью нехитрых преобразований мы получаем отклонение по широте и долготе от изначальной точки
         }
@@ -413,9 +417,23 @@ public class AudioFragment extends Fragment implements
         if (recordMillisTime < 10000) {
             // если меньше 10 секунд
             Toast.makeText(context, "Запись не может быть менее 10 секунд", Toast.LENGTH_SHORT).show();
-        } else {
-            // если запись идет более 10 секунд
+        } else if (isKeyWordSayed & !isRecording){ // если запись идет более 10 секунд
+            /*
+            Механизм текущей ситуации таков: запись будет идти до ключевого слова. После ключевого слова
+            проходит ещё 15 секунд и запись останавилвается. Переменные, в которые сохраняется звук
+            были вынесены за пределы startRecording, чтоб не терялись данные
+             */
+            for (int i = 0; i < mp3List.size(); i++) {
+                try {
+                    outputStream.write(mp3List.get(i), 0, bufferList.get(i));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            //Очистка данных перед сохранением файла, чтоб оно не мешало новым записям
             isRecording = false;
+            mp3List.clear();
+            bufferList.clear();
             // проверяем мы просто сохраняем новый файл, или останавливаем работу вообще
             if (prefManager.isUserRecorded()) {
                 // записываем данные аудиозаписи в текстовый док, для того, чтобы потом выгружать их отсюда на сервер
@@ -467,7 +485,6 @@ public class AudioFragment extends Fragment implements
 
 
     private void startRecording() {
-
         int minBuffer;
         int inSamplerate = 8000;
         AudioRecord audioRecord;
@@ -485,7 +502,7 @@ public class AudioFragment extends Fragment implements
 
         byte[] mp3buffer = new byte[(int) (1000)];
 
-        try {
+        try {//как мне кажется, проблема пустых записей стоит тут
             outputStream = new FileOutputStream(new File(fileName));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -501,8 +518,7 @@ public class AudioFragment extends Fragment implements
 
         int bytesRead = 0;
 
-        List<Integer> bufferList = new ArrayList<Integer>();
-        List<byte[]> mp3List = new ArrayList<byte[]>();
+
 
         while (isRecording) {
             bytesRead = audioRecord.read(buffer, 0, minBuffer);
@@ -522,7 +538,7 @@ public class AudioFragment extends Fragment implements
                     System.out.println(mp3buffer.length);
                 }
             }
-            if (recordMillisTime >= 20000){
+            if (recordMillisTime >= 15000 & isKeyWordSayed){
                 isRecording = false;
                 Handler handler = new Handler(getActivity().getBaseContext().getMainLooper());
                 handler.post( new Runnable() {
@@ -535,23 +551,10 @@ public class AudioFragment extends Fragment implements
 
             }
         }
-        if (prefManager.isUserRecorded()) {
-            for (int i = 0; i < mp3List.size(); i++) {
-                try {
-                    outputStream.write(mp3List.get(i), 0, bufferList.get(i));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        } else {
-            // если мы закончили работу, то удаляем созданный файл, т.к. один фиг он нулевой  длины
-            fileAudio.delete();
-        }
+
         audioRecord.stop();
         audioRecord.release();
         androidLame.close();
-
-        isRecording = false;
 
     }
 
@@ -702,7 +705,9 @@ public class AudioFragment extends Fragment implements
     public void onPartialResult(Hypothesis hypothesis) {
         if (hypothesis == null)
             return;
-
+        //Тут происходит фиксация того факта, что слово было сказано и обнуляет счётчик времени
+        isKeyWordSayed = true;
+        recordMillisTime = 0;
         System.out.println(hypothesis);
         String text = hypothesis.getHypstr();
         if (text.equals(KEYPHRASE)) {
