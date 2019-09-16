@@ -9,29 +9,32 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Firebase" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d5f2011-4933-4f60-856d-4e1cb806cdc5" name="Default" comment="Voice analytics">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aars/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aars/pocketsphinx-android-5prealpha-release.aar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="9d5f2011-4933-4f60-856d-4e1cb806cdc5" name="Default" comment="На данном этапе работает чтение ключевого слова во время записи. Через раз, но работает. Осталось решить проблему с слишком длинными записями и нулёвыми файлами, решение проблемы с тем, что оно начинает работать не сразу, позже сделаю. Комменты добавил">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/sphinx/SpeechRecognizerSetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/release/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/output.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/sync/assets.lst.dsfsfdfsdf.md5" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/sync/assets.lst.dsfsfdfsdf.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/sync/cmudict-en-us.dict.md5" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/sync/cmudict-en-us.dict.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/sync/digits.gram.md5" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/sync/digits.gram.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/sync/en-us-ptm/README.md5" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/sync/en-us-ptm/README.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/sync/en-us-ptm/feat.params.md5" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/sync/en-us-ptm/feat.params.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/sync/en-us-ptm/noisedict.md5" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/sync/en-us-ptm/noisedict.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/sync/menu.gram.md5" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/sync/menu.gram.md5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/AudioFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/AudioFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/AudioListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/AudioListFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/BootBroadcast.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/BootBroadcast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/LoginUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/LoginUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/PrefManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/PrefManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/UploadRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/UploadRecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login_user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login_user.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/android/support/constraint/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/android/support/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/android/support/test/espresso/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/android/support/test/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/master-index.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +45,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5X_API_27_x86" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_23" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -60,28 +63,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/AudioFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
+            <state relative-caret-position="-1020">
+              <caret line="559" column="40" selection-start-line="559" selection-start-column="40" selection-end-line="559" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#15611#15825#0" expanded="true" />
-                <element signature="e#15824#15825#0" expanded="true" />
-                <element signature="e#17383#17613#0" expanded="true" />
-                <element signature="e#17612#17613#0" expanded="true" />
-                <element signature="e#22979#23181#0" expanded="true" />
-                <element signature="e#23180#23181#0" expanded="true" />
-                <element signature="e#32044#32045#0" expanded="true" />
-                <element signature="e#32084#32085#0" expanded="true" />
+                <element signature="e#16081#16328#0" expanded="true" />
+                <element signature="e#16327#16328#0" expanded="true" />
+                <element signature="e#17853#18083#0" expanded="true" />
+                <element signature="e#18082#18083#0" expanded="true" />
+                <element signature="e#24008#24210#0" expanded="true" />
+                <element signature="e#24209#24210#0" expanded="true" />
+                <element signature="e#26680#26882#0" expanded="true" />
+                <element signature="e#26881#26882#0" expanded="true" />
+                <element signature="e#36028#36029#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/BootBroadcast.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/sphinx/SpeechRecognizerSetup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="139" column="61" selection-start-line="139" selection-start-column="61" selection-end-line="139" selection-end-column="61" />
+            <state relative-caret-position="-25">
+              <caret line="50" column="22" lean-forward="true" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -90,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login_user.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="686">
+            <state relative-caret-position="1170">
               <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
             </state>
           </provider>
@@ -100,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider editor-type-id="android-manifest" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="270">
               <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
             </state>
           </provider>
@@ -115,15 +119,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/audio_fragment.xml">
           <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-357" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/MarksFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-662">
+            <state relative-caret-position="75">
               <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
             </state>
           </provider>
@@ -142,6 +144,12 @@
       <find>succe</find>
       <find>success</find>
       <find>sleep</find>
+      <find>5</find>
+      <find>капс</find>
+      <find>жижа</find>
+      <find>аллах</find>
+      <find>ичкери</find>
+      <find>15</find>
     </findStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -168,6 +176,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login_user.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/LoginUser.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/BootBroadcast.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/sphinx/RecognitionListener.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/sphinx/Assets.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/sphinx/SpeechRecognizerSetup.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/sphinx/SpeechRecognizer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/AudioFragment.java" />
       </list>
     </option>
@@ -186,55 +198,44 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
-              <item name="VoiceAlytics" type="1abcf292:AndroidViewProjectNode" />
+              <item name="VoiceAlytics_JTI" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
             </path>
             <path>
-              <item name="VoiceAlytics" type="1abcf292:AndroidViewProjectNode" />
+              <item name="VoiceAlytics_JTI" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
             </path>
             <path>
-              <item name="VoiceAlytics" type="1abcf292:AndroidViewProjectNode" />
+              <item name="VoiceAlytics_JTI" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="voicealytics" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
             <path>
-              <item name="VoiceAlytics" type="1abcf292:AndroidViewProjectNode" />
+              <item name="VoiceAlytics_JTI" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="VoiceAlytics" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="VoiceAlytics" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="VoiceAlytics" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="voicealytics" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="sphinx" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DEBUGGABLE_DEVICE" value="xiaomi-mi_5-ac6549a0" />
+    <property name="DEBUGGABLE_PROCESS" value="ru.axas.voice" />
+    <property name="DEBUGGER_ID" value="Auto" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="X5BDU19109007244" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2019-08-31T15:06:10.619Z" />
     <property name="ExportApk.ApkPath" value="D:\AndroidStudioPro\VoiceAlytics\app" />
@@ -243,11 +244,17 @@
     <property name="ExportApk.SignV1" value="true" />
     <property name="ExportApk.SignV2" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="e5ecf2a97d53" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../sphinx/aars/pocketsphinx-android-5prealpha-release.aar" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/sphinx" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -364,6 +371,14 @@
       <option name="presentableId" value="Default" />
       <updated>1533535619407</updated>
     </task>
+    <task id="LOCAL-00001" summary="На данном этапе работает чтение ключевого слова во время записи. Через раз, но работает. Осталось решить проблему с слишком длинными записями и нулёвыми файлами, решение проблемы с тем, что оно начинает работать не сразу, позже сделаю. Комменты добавил">
+      <created>1568294594829</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568294594829</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -376,10 +391,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="23" width="2048" height="1046" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24975075" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -388,21 +403,20 @@
       <window_info id="Captures" order="6" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Resources Explorer" order="8" />
-      <window_info anchor="bottom" id="Messages" weight="0.32936078" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.12351029" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32914045" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.360587" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32914045" />
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="9" weight="0.2665222" />
-      <window_info anchor="bottom" id="Logcat" order="10" weight="0.32936078" />
+      <window_info anchor="bottom" id="Build" order="9" weight="0.2662474" />
+      <window_info anchor="bottom" id="Logcat" order="10" weight="0.32914045" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info anchor="right" id="Preview" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -413,16 +427,75 @@
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="StringPreview" order="8" />
       <window_info anchor="right" id="Assistant" order="9" weight="0.32995737" />
+      <window_info anchor="right" id="Preview" order="10" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Voice analytics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Voice analytics" />
+    <MESSAGE value="На данном этапе работает чтение ключевого слова во время записи. Через раз, но работает. Осталось решить проблему с слишком длинными записями и нулёвыми файлами, решение проблемы с тем, что оно начинает работать не сразу, позже сделаю. Комменты добавил" />
+    <option name="LAST_COMMIT_MESSAGE" value="На данном этапе работает чтение ключевого слова во время записи. Через раз, но работает. Осталось решить проблему с слишком длинными записями и нулёвыми файлами, решение проблемы с тем, что оно начинает работать не сразу, позже сделаю. Комменты добавил" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="app">
+        <watch expression="mp3List" language="JAVA" />
+        <watch expression="bufferList" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>bufferList</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mp3List</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>audioRecord.re</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>firstMp3List</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>firstBufferList</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>bufferList</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>isRecording</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>isKeyWordSayed</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mp3List</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="android-dummy://D:/AndroidStudioPro/VoiceAlytics/app/Translations Editor">
-      <provider selected="true" editor-type-id="string-resource-editor" />
-    </entry>
+    <entry file="android-dummy://D:/AndroidStudioPro/VoiceAlytics/app/Translations Editor" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/UploadRecordService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3213">
@@ -483,10 +556,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/MarksFragment.java">
+    <entry file="jar://$PROJECT_DIR$/aars/build/.transforms/df224ddfe14f94f6a92cd57cfef52a29/pocketsphinx-android-5prealpha-release/jars/classes.jar!/edu/cmu/pocketsphinx/SpeechRecognizer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-662">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="75">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-28/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/sync/cmudict-ru-ru.dict">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="155726" column="6" selection-start-line="155726" selection-end-line="155726" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/BootBroadcast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="139" column="61" selection-start-line="139" selection-start-column="61" selection-end-line="139" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login_user.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -496,47 +606,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/audio_fragment.xml">
       <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login_user.xml">
-      <provider editor-type-id="android-designer2" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/MarksFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
+        <state relative-caret-position="75">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/BootBroadcast.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/sphinx/Assets.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="139" column="61" selection-start-line="139" selection-start-column="61" selection-end-line="139" selection-end-column="61" />
+        <state relative-caret-position="-572">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/sphinx/RecognitionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        <state relative-caret-position="30">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/sphinx/SpeechRecognizerSetup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <caret line="50" column="22" lean-forward="true" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/sphinx/SpeechRecognizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="434" selection-start-line="434" selection-end-line="434" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10185#10186#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/apofe/voicealytics/AudioFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
+        <state relative-caret-position="-1020">
+          <caret line="559" column="40" selection-start-line="559" selection-start-column="40" selection-end-line="559" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#15611#15825#0" expanded="true" />
-            <element signature="e#15824#15825#0" expanded="true" />
-            <element signature="e#17383#17613#0" expanded="true" />
-            <element signature="e#17612#17613#0" expanded="true" />
-            <element signature="e#22979#23181#0" expanded="true" />
-            <element signature="e#23180#23181#0" expanded="true" />
-            <element signature="e#32044#32045#0" expanded="true" />
-            <element signature="e#32084#32085#0" expanded="true" />
+            <element signature="e#16081#16328#0" expanded="true" />
+            <element signature="e#16327#16328#0" expanded="true" />
+            <element signature="e#17853#18083#0" expanded="true" />
+            <element signature="e#18082#18083#0" expanded="true" />
+            <element signature="e#24008#24210#0" expanded="true" />
+            <element signature="e#24209#24210#0" expanded="true" />
+            <element signature="e#26680#26882#0" expanded="true" />
+            <element signature="e#26881#26882#0" expanded="true" />
+            <element signature="e#36028#36029#0" expanded="true" />
           </folding>
         </state>
       </provider>

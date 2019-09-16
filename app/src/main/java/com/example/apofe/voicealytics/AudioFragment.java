@@ -58,8 +58,8 @@ import java.util.TimeZone;
 import edu.cmu.pocketsphinx.Assets;
 import edu.cmu.pocketsphinx.Hypothesis;
 import edu.cmu.pocketsphinx.RecognitionListener;
-import edu.cmu.pocketsphinx.SpeechRecognizer;
-import edu.cmu.pocketsphinx.SpeechRecognizerSetup;
+import com.example.apofe.voicealytics.sphinx.SpeechRecognizer;
+import com.example.apofe.voicealytics.sphinx.SpeechRecognizerSetup;
 
 import static android.os.SystemClock.sleep;
 import static android.widget.Toast.makeText;
@@ -77,8 +77,8 @@ public class AudioFragment extends Fragment implements
     TextView geopos;
     FileOutputStream outputStream;
     boolean isRecording = false;
-    List<Integer> bufferList = new ArrayList<Integer>();
-    List<byte[]> mp3List = new ArrayList<byte[]>();
+    public static List<Integer> bufferList = new ArrayList<Integer>();
+    public static List<byte[]> mp3List = new ArrayList<byte[]>();
     boolean isKeyWordSayed = false;
     private LocationManager mLocationManager;
     private LocationListener mLocationListener;
@@ -98,7 +98,7 @@ public class AudioFragment extends Fragment implements
     private LinearLayout uploadLinear; // блок с вьюхой и кнопкой для загрузки
     private TextView countFileToUpload; // кол-во файлов для загрузки
     private Chronometer chronometer; // штука где выводим время записи
-    private long recordMillisTime; // для отслеживания записи менее 10 секунд
+    public static long recordMillisTime; // для отслеживания записи менее 10 секунд
     // эта простая и крутая штука - слушатель сервиса
     private BroadcastReceiver bReceiver = new BroadcastReceiver() {
         @Override
@@ -118,7 +118,7 @@ public class AudioFragment extends Fragment implements
     private static final String MENU_SEARCH = "menu";
 
     /* Keyword we are looking for to activate menu */
-    private static final String KEYPHRASE = "капсулой";
+    private static final String KEYPHRASE = "нож";
 
     /* Used to handle permission request */
     private static final int PERMISSIONS_REQUEST_RECORD_AUDIO = 1;
@@ -201,6 +201,7 @@ public class AudioFragment extends Fragment implements
             public void onClick(View v) {
                 // вызываем метод
                 // проверяем длительность записи
+                isKeyWordSayed = true;
                 if (recordMillisTime < 10000) {
                     // если меньше 10 секунд
                     Toast.makeText(context, "Запись не может быть менее 10 секунд", Toast.LENGTH_SHORT).show();
@@ -363,7 +364,10 @@ public class AudioFragment extends Fragment implements
                 Thread myThread = new Thread( // создаём новый поток
                         new Runnable() { // описываем объект Runnable в конструкторе
                             public void run() {
-                                startRecording();
+                                if (isKeyWordSayed)
+                                startRecordingSecond();
+                                else
+                                    startRecording();
                             }
                         }
                 );
@@ -485,6 +489,75 @@ public class AudioFragment extends Fragment implements
 
 
     private void startRecording() {
+        //Это первая часть, для записи голоса он использует микрофон и буфер от либы. Я его в ней объявил статический, чтоб имелся доступ
+        int minBuffer;
+        int inSamplerate = 8000;
+        AndroidLame androidLame = new AndroidLame();
+        AudioRecord audioRecord = null;
+
+        minBuffer = AudioRecord.getMinBufferSize(inSamplerate, AudioFormat.CHANNEL_IN_MONO,
+                AudioFormat.ENCODING_PCM_16BIT);
+
+        short[] buffer = new short[inSamplerate * 2 * 5];
+
+        byte[] mp3buffer = new byte[(int) (1000)];
+
+        try {//как мне кажется, проблема пустых записей стоит тут
+            outputStream = new FileOutputStream(new File(fileName));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        androidLame = new LameBuilder()
+                .setInSampleRate(inSamplerate)
+                .setOutChannels(1)
+                .setOutBitrate(32)
+                .setOutSampleRate(inSamplerate)
+                .build();
+        int bytesRead = 0;
+
+        while (isRecording) {
+            bytesRead = SpeechRecognizer.recorder.read(buffer, 0, minBuffer);
+            System.out.println(bytesRead);
+            if (bytesRead > 0) {
+                int bytesEncoded = androidLame.encode(buffer, buffer, bytesRead, mp3buffer);
+                System.out.println("encod" + bytesEncoded);
+                if (bytesEncoded > 0) {
+                    if (recordMillisTime > Integer.parseInt(prefManager.isUserTime()) * 1000) {
+                        mp3List.remove(0);
+                        bufferList.remove(0);
+                    }
+                    mp3List.add(mp3buffer);
+                    bufferList.add(bytesEncoded);
+
+                    mp3buffer = new byte[(int) (1000)];//7200 + buffer.length * 2 * 1.25
+                    System.out.println(mp3buffer.length);
+                }
+            }
+            if (recordMillisTime >= 15000 & isKeyWordSayed){
+                isRecording = false;
+                Handler handler = new Handler(getActivity().getBaseContext().getMainLooper());
+                handler.post( new Runnable() {
+                    @Override
+                    public void run() {
+                        stopRecord();
+                        finishWork();
+                    }
+                } );
+
+            }
+        }
+        if (isKeyWordSayed) {
+            if (audioRecord != null) {
+                audioRecord.stop();
+                audioRecord.release();
+            }
+        }
+        androidLame.close();
+
+    }
+    public void startRecordingSecond() {
+        //Запись второй части голосовухи
         int minBuffer;
         int inSamplerate = 8000;
         AudioRecord audioRecord;
@@ -706,6 +779,7 @@ public class AudioFragment extends Fragment implements
         if (hypothesis == null)
             return;
         //Тут происходит фиксация того факта, что слово было сказано и обнуляет счётчик времени
+        stopRecord();
         isKeyWordSayed = true;
         recordMillisTime = 0;
         System.out.println(hypothesis);
@@ -714,7 +788,6 @@ public class AudioFragment extends Fragment implements
             makeText(getActivity().getApplicationContext(), "KEY PHRASE", Toast.LENGTH_LONG).show();
 
             if (prefManager.isUserRecorded()){
-                stopRecord();
                 recognizer.stop();
                 sleep(700);
                 startRecord();
