@@ -427,6 +427,11 @@ public class AudioFragment extends Fragment implements
             проходит ещё 15 секунд и запись останавилвается. Переменные, в которые сохраняется звук
             были вынесены за пределы startRecording, чтоб не терялись данные
              */
+            if (mp3List.size() > 391) {//тут отсекается лишнее
+                int count = mp3List.size() - 391 - 1;
+                mp3List = mp3List.subList(count, mp3List.size()-1);
+                bufferList = bufferList.subList(count, bufferList.size()-1);
+            }
             for (int i = 0; i < mp3List.size(); i++) {
                 try {
                     outputStream.write(mp3List.get(i), 0, bufferList.get(i));
