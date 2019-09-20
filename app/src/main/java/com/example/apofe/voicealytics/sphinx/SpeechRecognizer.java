@@ -88,7 +88,7 @@ public class SpeechRecognizer {
         sampleRate = (int)decoder.getConfig().getFloat("-samprate");
         bufferSize = Math.round(sampleRate * BUFFER_SIZE_SECONDS);
         recorder = new AudioRecord(
-                AudioSource.VOICE_RECOGNITION, sampleRate,
+                AudioSource.MIC, sampleRate,
                 AudioFormat.CHANNEL_IN_MONO,
                 AudioFormat.ENCODING_PCM_16BIT, bufferSize * 2);
 

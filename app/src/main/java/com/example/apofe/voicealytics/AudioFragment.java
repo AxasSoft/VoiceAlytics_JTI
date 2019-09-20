@@ -118,7 +118,7 @@ public class AudioFragment extends Fragment implements
     private static final String MENU_SEARCH = "menu";
 
     /* Keyword we are looking for to activate menu */
-    private static final String KEYPHRASE = "нож";
+    private static final String KEYPHRASE = "компакт кафе";
 
     /* Used to handle permission request */
     private static final int PERMISSIONS_REQUEST_RECORD_AUDIO = 1;
@@ -202,7 +202,7 @@ public class AudioFragment extends Fragment implements
                 // вызываем метод
                 // проверяем длительность записи
                 isKeyWordSayed = true;
-                if (recordMillisTime < 10000) {
+                if (recordMillisTime < 15000) {
                     // если меньше 10 секунд
                     Toast.makeText(context, "Запись не может быть менее 10 секунд", Toast.LENGTH_SHORT).show();
                 } else {
@@ -427,6 +427,11 @@ public class AudioFragment extends Fragment implements
             проходит ещё 15 секунд и запись останавилвается. Переменные, в которые сохраняется звук
             были вынесены за пределы startRecording, чтоб не терялись данные
              */
+            try {//как мне кажется, проблема пустых записей стоит тут
+                outputStream = new FileOutputStream(new File(fileName));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
             if (mp3List.size() > 391) {//тут отсекается лишнее
                 int count = mp3List.size() - 391 - 1;
                 mp3List = mp3List.subList(count, mp3List.size()-1);
@@ -495,26 +500,21 @@ public class AudioFragment extends Fragment implements
 
     private void startRecording() {
         //Это первая часть, для записи голоса он использует микрофон и буфер от либы. Я его в ней объявил статический, чтоб имелся доступ
-        int minBuffer;
+        int minBuffer = 6400 * 2;
         int inSamplerate = 8000;
         AndroidLame androidLame = new AndroidLame();
         AudioRecord audioRecord = null;
 
-        minBuffer = AudioRecord.getMinBufferSize(inSamplerate, AudioFormat.CHANNEL_IN_MONO,
-                AudioFormat.ENCODING_PCM_16BIT);
+        //minBuffer = AudioRecord.getMinBufferSize(inSamplerate, AudioFormat.CHANNEL_IN_MONO,
+        //       AudioFormat.ENCODING_PCM_16BIT);
 
-        short[] buffer = new short[inSamplerate * 2 * 5];
+        short[] buffer = new short[minBuffer * 2 * 5];
 
-        byte[] mp3buffer = new byte[(int) (1000)];
-
-        try {//как мне кажется, проблема пустых записей стоит тут
-            outputStream = new FileOutputStream(new File(fileName));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        byte[] mp3buffer = new byte[(int) (minBuffer)];
 
         androidLame = new LameBuilder()
-                .setInSampleRate(inSamplerate)
+                .setInSampleRate(14000)
+                .setAbrMeanBitrate(16)
                 .setOutChannels(1)
                 .setOutBitrate(32)
                 .setOutSampleRate(inSamplerate)
@@ -534,12 +534,11 @@ public class AudioFragment extends Fragment implements
                     }
                     mp3List.add(mp3buffer);
                     bufferList.add(bytesEncoded);
-
-                    mp3buffer = new byte[(int) (1000)];//7200 + buffer.length * 2 * 1.25
+                    mp3buffer = new byte[(int) (minBuffer)];//7200 + buffer.length * 2 * 1.25
                     System.out.println(mp3buffer.length);
                 }
             }
-            if (recordMillisTime >= 15000 & isKeyWordSayed){
+            if (recordMillisTime >= 10000 & isKeyWordSayed){
                 isRecording = false;
                 Handler handler = new Handler(getActivity().getBaseContext().getMainLooper());
                 handler.post( new Runnable() {
@@ -579,12 +578,6 @@ public class AudioFragment extends Fragment implements
         short[] buffer = new short[inSamplerate * 2 * 5];
 
         byte[] mp3buffer = new byte[(int) (1000)];
-
-        try {//как мне кажется, проблема пустых записей стоит тут
-            outputStream = new FileOutputStream(new File(fileName));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
 
         androidLame = new LameBuilder()
                 .setInSampleRate(inSamplerate)
